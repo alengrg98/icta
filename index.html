@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marklist</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+        <div class="container">
+            <div class="form-row">
+                <div class="col col-12 col-sm-12 ">
+                    <div class="card">
+                        <div class="card-body">
+                            <form >
+                                    <div class="form-row">
+                                            <div class="form-group col-sm-6 col-md-4">
+                                                    <p>Name <input type="text" id="name" class="form-control"></p>
+                                            </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6 col-md-4">
+                                                <p>Sem</p>
+                                                <select id="sem" class="form-control">
+                                                    <option value="s1">s1</option>
+                                                    <option value="s2">s2</option>
+                                                    <option value="s3">s3</option>
+                                                    <option value="s4">s4</option>
+                                                    <option value="s5">s5</option>
+                                                    <option value="s6">s6</option>
+                                                    <option value="s7">s7</option>
+                                                    <option value="s8">s8</option>
+                                                </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <p>Sub Name <input type="text" id="sn1" class="form-control"></p>
+                                        </div> 
+                                        <div class="form-group col-md-4">
+                                                <p>Sub Marks Obtained <input type="number" id="sm1" class="form-control"></p>
+
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <p>Sub Total Marks <input type="number" id="smt1"class="form-control"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <p>Sub Name <input type="text" id="sn2" class="form-control"></p>
+                                            </div> 
+                                            <div class="form-group col-md-4">
+                                                    <p>Sub Marks Obtained <input type="number" id="sm2" class="form-control"></p>
+    
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <p>Sub Total Marks <input type="number" id="smt2"class="form-control"></p>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <p>Sub Name <input type="text" id="sn3" class="form-control"></p>
+                                                </div> 
+                                                <div class="form-group col-md-4">
+                                                        <p>Sub Marks Obtained <input type="number" id="sm3" class="form-control"></p>
+        
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <p>Sub Total Marks <input type="number" id="smt3"class="form-control"></p>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <p>Sub Name <input type="text" id="sn4" class="form-control"></p>
+                                                    </div> 
+                                                    <div class="form-group col-md-4">
+                                                            <p>Sub Marks Obtained <input type="number" id="sm4" class="form-control"></p>
+            
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <p>Sub Total Marks <input type="number" id="smt4"class="form-control"></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                        <div class="form-group col-md-4">
+                                                            <p>Sub Name <input type="text" id="sn5" class="form-control"></p>
+                                                        </div> 
+                                                        <div class="form-group col-md-4">
+                                                                <p>Sub Marks Obtained <input type="number" id="sm5" class="form-control"></p>
+                
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <p>Sub Total Marks <input type="number" id="smt5"class="form-control"></p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <p>Sub Name <input type="text" id="sn6" class="form-control"></p>
+                                                            </div> 
+                                                            <div class="form-group col-md-4">
+                                                                    <p>Sub Marks Obtained <input type="number" id="sm6" class="form-control"></p>
+                    
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <p>Sub Total Marks <input type="number" id="smt6"class="form-control"></p>
+                                                            </div>
+                                                  </div>
+                                                  <div class="form-row">
+                                                        <div class="form-group col-12 col-sm-12 col-md-12">
+                                                                <div class="text-center">
+                                                                        <button type="button" class="btn btn-primary" id="b1" onclick="generate();">Generate Mark List</button>
+    
+                                                                </div>
+                                                            </div>
+                                                  </div>
+
+                                               
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="results">
+
+            </div>
+        </div>
+</body>
+</html>

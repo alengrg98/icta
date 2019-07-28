@@ -1,9 +1,9 @@
 var i=0;
 //var snamearray=Array();
-var n,s,sname1,sname2,sname3,sname4,sname5,sname6;
+var n,s,examcode,sname1,sname2,sname3,sname4,sname5,sname6;
 var smark1,smark2,smark3,smark4,smark5,smark6;
-var stmark1,stmark2,stmark3,stmark4,stmark5,stmark6;
-var pmark1,pmark2,pmark3,pmark4,pmark5,pmark6;
+var tmark1,tmark2,tmark3,tmark4,tmark5,tmark6;
+var pmark1,pmark2,pmark3,pmark4,pmark5,pmark6,status1;
 //var g1,g2,g3,g4,g5,g6;
 var garray=Array();
 garray[0]="NULL";
@@ -12,6 +12,8 @@ function getdetails(){
     //alert(n);
      s=document.getElementById("sem").value;
     //alert(s);
+    examcode=document.getElementById("ecode").value;
+    //alert(examcode);
      sname1=document.getElementById("sn1").value;
     /*console.log(sname1);
     alert(sname);
@@ -57,18 +59,19 @@ function getdetails(){
    smark6=parseInt(document.getElementById("sm6").value);
    //console.log(smark6);
    
-    stmark1=parseInt(document.getElementById("smt1").value);
-   //console.log(stmark1);
-    stmark2=parseInt(document.getElementById("smt2").value);
-   //console.log(stmark2);
-    stmark3=parseInt(document.getElementById("smt3").value);
-   //console.log(stmark3);
-   stmark4=parseInt(document.getElementById("smt4").value);
-   //console.log(stmark4);
-   stmark5=parseInt(document.getElementById("smt5").value);
-   //console.log(stmark5);
-   stmark6=parseInt(document.getElementById("smt6").value);
-   //console.log(stmark6);
+    tmark1=parseInt(document.getElementById("smt1").value);
+   //console.log(tmark1);
+   //alert(tmark1);
+    tmark2=parseInt(document.getElementById("smt2").value);
+   //console.log(tmark2);
+    tmark3=parseInt(document.getElementById("smt3").value);
+   //console.log(tmark3);
+   tmark4=parseInt(document.getElementById("smt4").value);
+   //console.log(tmark4);
+   tmark5=parseInt(document.getElementById("smt5").value);
+   //console.log(tmark5);
+   tmark6=parseInt(document.getElementById("smt6").value);
+   //console.log(tmark6);
    
   
 
@@ -77,12 +80,12 @@ function getdetails(){
 
 function percentage(){
     //console.log(smark1);
-    pmark1=(smark1/stmark1)*100;
-    pmark2=(smark2/stmark2)*100;
-    pmark3=(smark3/stmark3)*100;
-    pmark4=(smark4/stmark4)*100;
-    pmark5=(smark5/stmark5)*100;
-    pmark6=(smark6/stmark6)*100;
+    pmark1=(smark1/tmark1)*100;
+    pmark2=(smark2/tmark2)*100;
+    pmark3=(smark3/tmark3)*100;
+    pmark4=(smark4/tmark4)*100;
+    pmark5=(smark5/tmark5)*100;
+    pmark6=(smark6/tmark6)*100;
     //console.log(pmark1);
     //alert(pmark1);
     return 0;
@@ -140,18 +143,48 @@ function grade()
             {
                 garray[i]="F";
           }
-      console.log(garray[i]);
+      //console.log(garray[i]);
     }  
 
    
         
     return 0;
 }
+function getstatus()
+{
+    status1="PASSED";
+    for (i=1;i<=6;i++)
+    {
+        if(garray[i]=='F')
+                status1='FAIL';
+    }
+}
+function printtable()
+{
+    //alert(tmark1);
+    var code;
+    code+='<div class="card"><div class="card-body"><table class="table table-borderless">';
+    code+='<tr> <td> <label ><h5>Name:</h5></label> '+' '+n+'</td> <td> <label> <h5> Sem:'+' '+s+' </h5></label>';
+    code+='</td> <td> <label> <h5> Exam Code: </h5> </label> '+'  '+examcode+'</td></tr></table>';
+    code+='<table class="table table-bordered"> <thead class="thead-dark"> <tr> <th> Subject </th> <th>Mark Obtained</th><th>Total Mark</th><th>Grade</th> </tr> </thead> ';
+    for(i=1;i<=6;i++){
+    code+='<tr>';
+    code+='<td>'+eval("sname"+i)+'</td> <td>'+eval("smark"+i)+'</td> '+' <td>'+eval("tmark"+i)+'</td>'+'<td>'+garray[i]+'</td> ';
+    }
+    code+='</table><label class="float-right"><h5> Status: '+status1;
+    
+    code+=' </h5> </label> </div> </div>';
+    document.getElementById("results").innerHTML=code;
+    return 0;
+}
 function generate(){
     getdetails();
-    //console.log(stmark1);
+    //console.log(tmark1);
     percentage();
     grade();
+    getstatus();
+    printtable();
+    //alert(status1);
 
 
 }

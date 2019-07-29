@@ -6,7 +6,7 @@ var tmark1,tmark2,tmark3,tmark4,tmark5,tmark6;
 var pmark1,pmark2,pmark3,pmark4,pmark5,pmark6,status1;
 //var g1,g2,g3,g4,g5,g6;
 var garray=Array();
-garray[0]="NULL";
+garray[0]="";
 function getdetails(){
      n=document.getElementById("name").value;
     //alert(n);
@@ -75,7 +75,6 @@ function getdetails(){
    
   
 
-    return 0;
 }
 
 function percentage(){
@@ -88,7 +87,6 @@ function percentage(){
     pmark6=(smark6/tmark6)*100;
     //console.log(pmark1);
     //alert(pmark1);
-    return 0;
 }
 function grade()
 {
@@ -148,7 +146,6 @@ function grade()
 
    
         
-    return 0;
 }
 function getstatus()
 {
@@ -163,19 +160,18 @@ function printtable()
 {
     //alert(tmark1);
     var code;
-    code+='<div class="card"><div class="card-body"><table class="table table-borderless">';
+    code='<div class="card"><div class="card-body"><table class="table table-borderless">';
     code+='<tr> <td> <label ><h5>Name:</h5></label> '+' '+n+'</td> <td> <label> <h5> Sem:'+' '+s+' </h5></label>';
     code+='</td> <td> <label> <h5> Exam Code: </h5> </label> '+'  '+examcode+'</td></tr></table>';
-    code+='<table class="table table-bordered"> <thead class="thead-dark"> <tr> <th> Subject </th> <th>Mark Obtained</th><th>Total Mark</th><th>Grade</th> </tr> </thead> ';
+    code+='<table class="table table-bordered"> <thead class="thead-light"> <tr> <th> Subject </th> <th>Mark Obtained</th><th>Total Mark</th><th>Grade</th> </tr> </thead> <tbody>';
     for(i=1;i<=6;i++){
     code+='<tr>';
     code+='<td>'+eval("sname"+i)+'</td> <td>'+eval("smark"+i)+'</td> '+' <td>'+eval("tmark"+i)+'</td>'+'<td>'+garray[i]+'</td> ';
     }
-    code+='</table><label class="float-right"><h5> Status: '+status1;
+    code+='</tbody></table><label class="float-right"><h5> Status: '+status1;
     
     code+=' </h5> </label> </div> </div>';
     document.getElementById("results").innerHTML=code;
-    return 0;
 }
 function generate(){
     getdetails();
